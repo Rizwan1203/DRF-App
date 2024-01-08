@@ -1,10 +1,3 @@
-# My Project
-
-## Table of Contents
-- [Setup](#setup)
-- [API Documentation](#api-documentation)
-- [Running Tests](#running-tests)
-
 ## Setup
 1. Create and activate a virtual environment:
     ```bash
@@ -18,23 +11,28 @@
     ```bash
     pip install -r requirements.txt
     ```
+
 3. Move into the `myproject` directory:
     ```bash
     cd myproject
     ```
 
-4. Run migrations:
+4. Create a `.env` file:
+   - Copy the contents from [env.example](myproject/env.example) to a new file named `.env`.
+   - Update the values in the `.env` file with your configuration. This file will contain sensitive information, so ensure it is kept secret and not shared.
+
+5. Run migrations:
     ```bash
     python manage.py makemigrations
     python manage.py migrate
     ```
 
-5. Create a superuser:
+6. Create a superuser:
     ```bash
     python manage.py createsuperuser
     ```
 
-6. Run the development server:
+7. Run the development server:
     ```bash
     python manage.py runserver
     ```
