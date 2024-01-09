@@ -3,13 +3,13 @@ from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated
 
 from .models import Item
-from .serializers import ItemSerializer
+from .serializers import ItemListCreateSerializer, ItemSerializer
 
 
 @extend_schema(tags=["item"])
 class ItemListCreateView(generics.ListCreateAPIView):
     permission_classes = [IsAuthenticated]
-    serializer_class = ItemSerializer
+    serializer_class = ItemListCreateSerializer
 
     def get_queryset(self):
         return Item.objects.filter(created_by=self.request.user)
